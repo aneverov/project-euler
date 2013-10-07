@@ -16,10 +16,12 @@ object Main extends App {
       4 -> new Problem4,
       5 -> new Problem5,
       6 -> new Problem6,
+      7 -> new Problem7,
       9 -> new Problem9,
       13 -> new Problem13,
       14 -> new Problem14,
-      45 -> new Problem45)
+      45 -> new Problem45
+    )
     problems get problemNumber match {
       case Some(problem) =>
         println(s"\n${problem.description.stripMargin}")
