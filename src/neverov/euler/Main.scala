@@ -1,21 +1,15 @@
 package neverov.euler
 
-import collection.immutable.HashMap
 import neverov.euler.problems._
 
-/**
- * User: A_Neverov
- * Date: 22.06.12
- * Time: 12:21
- */
 object Main extends App {
 
   override def main(args: Array[String]) {
-    Console.println("Enter problem number to solve: ")
-    val problemNumber = Console.readLine().toInt
-    Console.println("\nYou selected problem " + problemNumber)
+    println("Enter problem number to solve: ")
+    val problemNumber = readLine().toInt
+    println(s"\nYou selected problem $problemNumber")
 
-    val problems = HashMap[Int, EulerProblem](
+    val problems = Map(
       1 -> new Problem1,
       2 -> new Problem2,
       3 -> new Problem3,
@@ -26,12 +20,11 @@ object Main extends App {
       13 -> new Problem13,
       14 -> new Problem14,
       45 -> new Problem45)
-    val problem = problems.get(problemNumber)
-    problem match {
-      case Some(p) =>
-        Console.println("\n" + p.description)
-        Console.println("\nResult: " + p.solve)
-      case None => Console.println("\nSolution to this problem is yet unknown")
+    problems get problemNumber match {
+      case Some(problem) =>
+        println(s"\n${problem.description.stripMargin}")
+        println(s"\nResult: ${problem.solve}")
+      case None => println("\nSolution to this problem is yet unknown")
     }
   }
 }

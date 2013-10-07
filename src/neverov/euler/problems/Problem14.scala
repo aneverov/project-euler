@@ -5,11 +5,6 @@ import collection.immutable.HashMap
 import scala.collection
 import scala.collection
 
-/**
- * User: Neverrav
- * Date: 24.06.12
- * Time: 18:26
- */
 class Problem14 extends EulerProblem {
   val description = "The following iterative sequence is defined for the set of positive integers:\n" +
     "n  n/2 (n is even)\n" +
@@ -25,7 +20,7 @@ class Problem14 extends EulerProblem {
     def seq(start: Int) = Iterator.iterate(start){i: Int => if (i%2 == 0) i/2 else 3*i+1}.takeWhile(_ != 1)
 
     def sequence(start: Int): List[Int] = {
-      var list = List[Int]();
+      val list = List[Int]()
       list
       //list ++= start
       //if (start != 1) {
@@ -37,7 +32,7 @@ class Problem14 extends EulerProblem {
     println(seq(113383).length)
 
     var result = (0, 0)
-    for (i <- (1 to 1000000)) {
+    for (i <- 1 to 1000000) {
       if (i > 113380) println("processing i=" + i)
       val length = seq(i).length + 1
 
@@ -46,6 +41,6 @@ class Problem14 extends EulerProblem {
         result = (i, length)
       }
     }
-    result._1 toString
+    result._1.toString
   }
 }

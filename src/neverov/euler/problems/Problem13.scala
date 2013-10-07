@@ -2,11 +2,6 @@ package neverov.euler.problems
 
 import neverov.euler.EulerProblem
 
-/**
- * User: Neverrav
- * Date: 24.06.12
- * Time: 13:37
-*/
 class Problem13 extends EulerProblem {
   val description = "Work out the first ten digits of the sum of the following one-hundred 50-digit numbers."
 

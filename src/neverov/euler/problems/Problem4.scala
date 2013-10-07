@@ -2,11 +2,6 @@ package neverov.euler.problems
 
 import neverov.euler.EulerProblem
 
-/**
- * User: A_Neverov
- * Date: 25.06.12
- * Time: 11:03
- */
 class Problem4 extends EulerProblem {
   val description = "A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 99.\n" +
     "Find the largest palindrome made from the product of two 3-digit numbers."
@@ -24,8 +19,10 @@ class Problem4 extends EulerProblem {
     }
 
     val palindromes =
-      for (i <- (100 until 1000);
-           j <- (100 until 1000) if isPalindrome(i*j)) yield i*j
+      for {
+        i <- 100 until 1000
+        j <- 100 until 1000 if isPalindrome(i*j)
+      } yield i*j
 
     palindromes.max.toString
   }

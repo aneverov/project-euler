@@ -2,12 +2,6 @@ package neverov.euler.problems
 
 import neverov.euler.EulerProblem
 
-/**
- * User: Neverrav
- * Date: 23.06.12
- * Time: 15:02
- */
-
 class Problem3 extends EulerProblem {
   val description = "The prime factors of 13195 are 5, 7, 13 and 29.\nWhat is the largest prime factor of the number 600851475143 ?"
 
@@ -19,12 +13,12 @@ class Problem3 extends EulerProblem {
     lazy val primes: Stream[Long] =
       Stream.cons(2, primes.map(x => {
         var tmp = x
-        (while ((limit % tmp) != 0 && limit != 1) {
+        while ((limit % tmp) != 0 && limit != 1) {
           tmp = tmp + 1
-        })
+        }
         limit = limit / tmp
         tmp
       }))
-    primes.take(10).last toString
+    primes.take(10).last.toString
   }
 }

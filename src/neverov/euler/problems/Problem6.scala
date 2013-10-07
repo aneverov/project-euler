@@ -2,11 +2,6 @@ package neverov.euler.problems
 
 import neverov.euler.EulerProblem
 
-/**
- * User: Neverrav
- * Date: 24.08.12
- * Time: 20:58
- */
 class Problem6 extends EulerProblem{
   val description = "The sum of the squares of the first ten natural numbers is,\n" +
     "12 + 22 + ... + 102 = 385\nThe square of the sum of the first ten natural numbers is,\n" +
